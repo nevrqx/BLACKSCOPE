@@ -1,50 +1,42 @@
-# BLACKSCOPE
+# BLACKSCOPE — CS2 Cheat (for study)
 
-Clean project structure, ready for GitHub.
+Directly: this is a cheat client for Counter‑Strike 2 on Windows. It adds an ESP overlay, optional aimbot, and trigger feature. The project is intended for learning and research (overlays, rendering, hotkeys, config persistence, etc.).
 
----
-
-# Overview
-
-BLACKSCOPE is a Windows overlay client built with PySide6 that provides ESP visualization, an optional aim assist, and a trigger feature for first‑person shooters. The UI focuses on clarity, performance, and configurability, and the app can be packaged into a single portable executable.
-
-Important: This project is provided for educational and research purposes only. Using game automation or memory tools can violate game Terms of Service and local laws. You are solely responsible for how you use this software.
+You are fully responsible for installation, usage, and any consequences. Using cheats may violate game Terms of Service and local laws. You use this software at your own risk.
 
 ## Demo
 
 <p align="center">
   <img src="assets/demo.gif" alt="BLACKSCOPE demo: ESP overlay, aim assist, trigger feature" width="900" />
   <br/>
-  <em>Demonstration of ESP overlay elements (boxes, health, nicknames), optional aim assist and trigger behavior.</em>
+  <em>ESP elements (boxes, health, nicknames), optional aimbot and trigger.</em>
   <br/>
-  <small>Rendered via the in-app overlay on Windows (PySide6 + Win32).</small>
+  <small>Rendered via in‑app overlay (PySide6 + Win32).</small>
 </p>
 
-## Key Features
+## Features
 
-- ESP overlay with customizable styles
-  - Boxes (classic, corner, capsule), line/radius, nicknames, weapon, bomb ESP
-  - Health bar with optional gradient fill and opacity/alpha controls
-  - Neon outline option, head hitbox highlight, on‑screen FPS indicator and FPS cap for the overlay
-- Aim assist (optional)
-  - Hold‑to‑aim hotkey, FOV radius, bone selection (head/chest), screen/bias offsets
-  - Snap or smoothed targeting with humanization and reaction/pause tuning
-  - Sticky snap and separate smoothing while firing
-- Trigger feature (optional)
+- ESP overlay with style options
+  - Boxes (classic, corner, capsule), lines/radius, nicknames, weapon, bomb
+  - Health bar (incl. gradient), opacity/alpha
+  - Neon outline, head hitbox highlight, on‑screen FPS and overlay FPS cap
+- Aimbot (optional)
+  - Hold‑to‑aim hotkey, FOV radius, bone selection (head/chest), offsets
+  - Snap or smoothed targeting, humanization, reaction/pause tuning
+  - Sticky aim, separate smoothing while firing
+- Trigger (optional)
   - Hold key or Always mode, radius threshold, click delay
 - Hit feedback
-  - Hitmarker with configurable duration and floating damage indicators
-- Polished UX
-  - Custom title bar, modern toggle switches, accent themes, DPI‑aware fonts/icons
-- Offline‑first settings and licensing placeholders
-  - Settings persisted under `%LOCALAPPDATA%/temp/PyIt/config.json`
-  - Network licensing is disabled; the UI remains compatible with future backends
+  - Hitmarker, timing and floating damage
+- UI/UX
+  - Custom title bar, modern toggles, themes, DPI‑aware fonts/icons
+- Local settings
+  - Config stored at `%LOCALAPPDATA%/temp/PyIt/config.json`
 
 ## Repository Contents
 
 - `blackscorpe.py` — main PySide6 GUI client and overlay logic
-- `index.html` — optional, standalone local page for managing keys via browser LocalStorage (no server)
-- `app.ico` — app icon (used in UI and PyInstaller builds)
+- `app.ico` — app icon (UI and PyInstaller builds)
 - `requirements.txt` — Python dependencies
 - `.gitignore` — ignores venv/build/dist/spec and similar artifacts
 - `README.md` — this file
@@ -65,7 +57,7 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
-If PowerShell blocks script execution when activating the venv, run once (as current user):
+If PowerShell blocks script execution when activating the venv, run once (for current user):
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
@@ -84,7 +76,7 @@ pip install pyinstaller
 pyinstaller --noconfirm --onefile --windowed --icon app.ico --name BLACKSCOPE blackscorpe.py
 ```
 
-The portable binary will appear at `dist/BLACKSCOPE.exe`. Do not commit `build/`, `dist/`, or `*.spec` files.
+The portable binary will appear at `dist/BLACKSCOPE.exe`. Do not commit `build/`, `dist/`, or `*.spec`.
 
 ## Cleaning build artifacts (optional)
 
@@ -95,30 +87,30 @@ The portable binary will appear at `dist/BLACKSCOPE.exe`. Do not commit `build/`
 
 - Settings directory: `%LOCALAPPDATA%/temp/PyIt/`
 - Main config: `%LOCALAPPDATA%/temp/PyIt/config.json`
-- Multiple profiles live under: `%LOCALAPPDATA%/temp/PyIt/configs/`
+- Profiles: `%LOCALAPPDATA%/temp/PyIt/configs/`
 
 ## Pros and Cons
 
 Pros
-- Modern PySide6 UI with DPI‑aware rendering and custom widgets
-- Highly configurable ESP/aim/trigger system with smoothness and humanization controls
-- Offline‑first: works without external licensing servers
-- Packagable into a single `.exe` for easy distribution
+- Modern PySide6 UI, DPI‑aware rendering, custom widgets
+- Highly configurable ESP/aim/trigger with smoothing and humanization
+- Offline‑first; no external licensing server required
+- Can be packaged into a single `.exe`
 
 Cons
 - Windows‑only stack (PySide6 + Win32 + memory tooling)
 - Game updates can break offsets and require maintenance
-- Undetectability is not guaranteed; misuse can lead to bans or other consequences
+- No guarantees of undetectability; bans and other consequences are possible
 
-## Security and Safety Suggestions
+## Security suggestions
 
-- Use on test accounts and in controlled environments only
-- Avoid storing any sensitive keys in plain text; consider OS‑protected storage or DPAPI
+- Use only on test accounts and in controlled environments
+- Do not store sensitive keys in plain text; use OS‑protected storage/DPAPI
 - Prefer offline mode; if you add networking, pin TLS and validate hosts
-- Add integrity checks for downloaded offsets and handle timeouts/failures gracefully
-- If distributing binaries, sign them and publish SHAs; avoid auto‑updaters that fetch unsigned code
+- Add integrity checks for downloaded offsets and handle timeouts/failures
+- Sign binaries and publish SHAs; avoid unsigned auto‑updaters
 
-## Contribution Ideas
+## Contribution ideas
 
 - Add per‑game/process profiles and auto‑profile switching
 - Expand ESP styles (skeletons, occlusion checks, visibility coloring)
@@ -135,10 +127,8 @@ Cons
 - Optional network licensing (opt‑in), rate‑limited with secure server‑side checks
 - In‑app profile sharing/export/import with checksums
 
-## Disclaimer
+## Responsibility and legal risks
 
-This software is for research and educational purposes only. The authors and contributors are not responsible for any misuse, violations of Terms of Service, bans, or legal consequences. Use at your own risk.
+This project is a CS2 cheat and is provided solely for study and research. Using such tools may violate game Terms of Service and/or the laws of your jurisdiction. You accept full responsibility for installation, usage, and any consequences: bans, sanctions, loss of account access, legal risks, etc. The authors and contributors bear no responsibility.
 
-## Лицензии/ключи
-
-`index.html` работает полностью локально и использует LocalStorage браузера для хранения данных ключей. Сервер не требуется.
+ 
