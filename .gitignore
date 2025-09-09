@@ -1,0 +1,53 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.buildvenv/
+venv/
+ENV/
+
+# PyInstaller / build artifacts
+build/
+dist/
+*.spec
+
+# Packaging
+*.egg-info/
+.eggs/
+*.egg
+
+# Tools and caches
+.mypy_cache/
+.pytest_cache/
+.cache/
+coverage.xml
+.htmlcov/
+.pyre/
+.pytype/
+
+# Editors/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local environment overrides
+.env
+.env.*
+
+# Node/web caches if any
+node_modules/
+
+# Images or large binaries not intended for source control (keep icons/assets explicitly)
+# !app.ico  # keep the application icon
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar

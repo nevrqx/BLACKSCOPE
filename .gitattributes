@@ -1,0 +1,26 @@
+# Auto-detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Keep Windows-specific scripts with CRLF if needed
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Treat common binary assets as binary (no diff)
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.zip binary
+*.7z binary
+*.rar binary
+*.exe binary
+*.dll binary
+
+# Ensure Python files are treated as text
+*.py text
+*.pyw text
+
+# Keep .gitattributes itself normalized
+.gitattributes text eol=lf

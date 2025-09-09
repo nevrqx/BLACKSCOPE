@@ -1,0 +1,5 @@
+PySide6>=6.5
+requests>=2.31.0
+pymem>=1.13.1
+pywin32>=306
+psutil>=5.9.8

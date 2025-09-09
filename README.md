@@ -13,7 +13,7 @@ Important: This project is provided for educational and research purposes only. 
 ## Demo
 
 <p align="center">
-  <img src="Видео без названия — сделано в Clipchamp.gif" alt="BLACKSCOPE demo: ESP overlay, aim assist, trigger feature" width="900" />
+  <img src="assets/demo.gif" alt="BLACKSCOPE demo: ESP overlay, aim assist, trigger feature" width="900" />
   <br/>
   <em>Demonstration of ESP overlay elements (boxes, health, nicknames), optional aim assist and trigger behavior.</em>
   <br/>
